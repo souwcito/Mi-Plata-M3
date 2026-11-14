@@ -1,0 +1,6 @@
+# Archivos temporales o de diseño no requeridos en la entrega
+*.drawio
+*.drawio.bkp
+*.tmp
+.DS_Store
+Thumbs.db

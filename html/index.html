@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Mi Plata — Sistema Financiero Digital</title>
+    <meta name="description" content="Mi Plata Financial Bank — Cuentas de Ahorro, Cuenta Corriente y Tarjeta de Crédito Digital con la tecnología bancaria más avanzada.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Barra de Navegación Futurista -->
+    <header class="navbar">
+        <div class="logo">
+            <h2>MI PLATA <span>FINANCIAL BANK</span></h2>
+            <div class="nav-cyber-pill">
+                <span class="cyber-pulse-dot"></span>
+                <span>NODO BANCARIO 256-BIT EN LÍNEA</span>
+            </div>
+        </div>
+        <nav>
+            <button type="button" onclick="mostrarSeccion('inicio')">Inicio</button>
+            <button type="button" onclick="mostrarSeccion('login')">Iniciar Sesión</button>
+            <button type="button" onclick="mostrarSeccion('registro')" class="btn-primary">Registrarse</button>
+        </nav>
+    </header>
+
+    <!-- Sección 1: Landing Page (Inicio) -->
+    <section id="inicio" class="seccion-activa hero">
+        <div class="hero-content">
+            <div class="hero-pill">
+                <span>✦ BANCA DIGITAL INTELIGENTE DE NUEVA GENERACIÓN</span>
+            </div>
+            <h1>El futuro cuántico de tus finanzas personales</h1>
+            <p>Gestiona tu Cuenta de Ahorros con rendimiento real, opera tu Cuenta Corriente con sobregiro inteligente del 20% y difiere tus compras con Tarjeta de Crédito y tabla de amortización automatizada.</p>
+            
+            <div class="hero-actions">
+                <button type="button" onclick="mostrarSeccion('registro')" class="btn-large">Aperturar Cuenta Digital</button>
+                <button type="button" onclick="mostrarSeccion('login')" class="btn-secondary-large">Ingresar al Portal</button>
+            </div>
+
+            <!-- Estadísticas Bancarias -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Clientes Activos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$2.5B+</div>
+                    <div class="stat-label">Transacciones Procesadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.99%</div>
+                    <div class="stat-label">Disponibilidad de Red</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0% Int.</div>
+                    <div class="stat-label">A 1 y 2 Cuotas</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta Bancaria Flotante 3D Futurista en tonos azules -->
+        <div class="bank-card-wrapper">
+            <div class="bank-card" id="bankCard">
+                <div class="card-chip-cyber"></div>
+                <div class="card-contactless-cyber"></div>
+                <div class="card-header">
+                    <span class="card-bank-name">MI PLATA DIGITAL</span>
+                    <span class="card-network-badge">BLACK EDITION</span>
+                </div>
+                <div class="card-number">4832 •••• •••• 7291</div>
+                <div class="card-footer">
+                    <div>
+                        <div class="card-holder">TITULAR DE LA CUENTA</div>
+                        <div class="card-holder-name">MATEO S.</div>
+                    </div>
+                    <div class="card-expiry">
+                        <div class="card-expiry-label">VENCE</div>
+                        <div class="card-expiry-date">12/30</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Características del Sistema Financiero -->
+        <div class="features-section">
+            <div class="feature-card">
+                <span class="feature-icon">🛡️</span>
+                <h3>Criptografía y Seguridad</h3>
+                <p>Protección biométrica y encriptación cuántica de 256 bits para todas tus transacciones.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3>Transferencias Inmediatas</h3>
+                <p>Movimientos en tiempo real entre cuentas de ahorros, corriente o hacia terceros sin demoras.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💳</span>
+                <h3>Crédito con Amortización</h3>
+                <p>Cupo inteligente de $2,000,000 con tasas preferenciales y cálculo matemático francés de cuotas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 2: Inicio de Sesión -->
+    <section id="login" class="seccion-oculta formulario-section">
+        <div class="card card-cyber">
+            <div class="card-badge-top">AUTENTICACIÓN SEGURA</div>
+            <h2>Ingreso al Portal Bancario</h2>
+            <p>Accede con tus credenciales cifradas al panel transaccional</p>
+            <form id="formLogin" onsubmit="event.preventDefault(); procesarLogin();">
+                <div class="form-group">
+                    <label for="loginUsuario">Nombre de Usuario</label>
+                    <input type="text" id="loginUsuario" placeholder="Ingresa tu usuario registrado" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="loginClave">Contraseña de Seguridad</label>
+                    <input type="password" id="loginClave" placeholder="Ingresa tu contraseña" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn-primary btn-block">Ingresar a Mi Plata</button>
+            </form>
+            <p id="msgLogin" class="mensaje-error"></p>
+            <div class="form-footer-link">
+                <span>¿No eres cliente aún?</span>
+                <button type="button" onclick="mostrarSeccion('registro')" class="link-btn">Regístrate en minutos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3: Registro -->
+    <section id="registro" class="seccion-oculta formulario-section">
+        <div class="card card-cyber">
+            <div class="card-badge-top">AFILIACIÓN DIGITAL</div>
+            <h2>Apertura de Cuenta Nueva</h2>
+            <p>Únete a Mi Plata y recibe tu Cuenta de Ahorros, Cuenta Corriente y Tarjeta de Crédito</p>
+            <form id="formRegistro" onsubmit="event.preventDefault(); procesarRegistro();">
+                <div class="form-grid-two">
+                    <div class="form-group">
+                        <label for="regCedula">Documento de Identidad (Cédula)</label>
+                        <input type="number" id="regCedula" placeholder="Ej: 1020304050" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regNombre">Nombre Completo</label>
+                        <input type="text" id="regNombre" placeholder="Ej: Mateo Salazar" required>
+                    </div>
+                </div>
+                <div class="form-grid-two">
+                    <div class="form-group">
+                        <label for="regCelular">Número de Celular</label>
+                        <input type="number" id="regCelular" placeholder="Ej: 3001234567" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regUsuario">Nombre de Usuario Único</label>
+                        <input type="text" id="regUsuario" placeholder="Ej: mateo2026" required autocomplete="username">
+                    </div>
+                </div>
+                <div class="form-grid-two">
+                    <div class="form-group">
+                        <label for="regClave">Contraseña (Mín. 4 caracteres)</label>
+                        <input type="password" id="regClave" placeholder="••••••••" required autocomplete="new-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="regClave2">Confirmar Contraseña</label>
+                        <input type="password" id="regClave2" placeholder="••••••••" required autocomplete="new-password">
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary btn-block">Aperturar Mis Cuentas</button>
+            </form>
+            <p id="msgRegistro" class="mensaje-error"></p>
+            <div class="form-footer-link">
+                <span>¿Ya tienes cuenta activa?</span>
+                <button type="button" onclick="mostrarSeccion('login')" class="link-btn">Iniciar Sesión</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4: Panel del Cajero (Dashboard Transaccional) -->
+    <section id="panelCajero" class="seccion-oculta">
+        <!-- Header del Dashboard -->
+        <div class="dashboard-header">
+            <div class="dashboard-greeting">
+                <div class="dashboard-pill">
+                    <span class="cyber-pulse-dot"></span>
+                    <span>PANEL TRANSACCIONAL POO</span>
+                </div>
+                <h2 id="saludoUsuario">Bienvenido, Usuario</h2>
+                <p class="dashboard-subtitle">Gestiona tus productos bancarios y visualiza tus cuotas y extractos en tiempo real</p>
+            </div>
+            <div class="dashboard-header-actions">
+                <button type="button" onclick="abrirModal('editarPerfil')" class="btn-header-secondary" title="Editar mis datos de perfil">
+                    <span>👤 Mis Datos</span>
+                </button>
+                <button type="button" onclick="abrirModal('cambiarClave')" class="btn-header-secondary" title="Actualizar clave de acceso">
+                    <span>🔑 Seguridad</span>
+                </button>
+                <button type="button" onclick="cerrarSesion()" class="btn-logout" id="btnCerrarSesion" title="Cerrar sesión bancaria">
+                    <span class="logout-icon">⎋</span>
+                    <span>Salir</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Grid Principal del Dashboard -->
+        <div class="dashboard-grid">
+            <!-- Columna Izquierda: Mis Productos Financieros -->
+            <div class="dashboard-column saldos-column">
+                <div class="column-title">
+                    <span class="column-icon">💎</span>
+                    <span>Mis Productos Bancarios</span>
+                </div>
+
+                <!-- Tarjeta 1: Cuenta de Ahorros (Azul Sapphire Futurista) -->
+                <div class="balance-card balance-card--ahorros">
+                    <div class="balance-card__glow"></div>
+                    <div class="balance-card__header">
+                        <div class="balance-card__type">
+                            <span class="balance-card__icon">🏦</span>
+                            <span class="balance-card__name">Cuenta de Ahorros</span>
+                        </div>
+                        <span class="balance-card__badge">1.5% Tarifa Retiro</span>
+                    </div>
+                    <div class="balance-card__body">
+                        <span class="balance-card__label">Saldo Disponible</span>
+                        <div class="balance-card__amount" id="saldoAhorro">$ 0.00</div>
+                    </div>
+                    <div class="balance-card__footer">
+                        <span class="balance-card__account">AH •••• 4029</span>
+                        <span class="balance-card__tag">Activa • Rentable</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Cuenta Corriente (Azul Royal Cobalt Futurista) -->
+                <div class="balance-card balance-card--corriente">
+                    <div class="balance-card__glow"></div>
+                    <div class="balance-card__header">
+                        <div class="balance-card__type">
+                            <span class="balance-card__icon">💼</span>
+                            <span class="balance-card__name">Cuenta Corriente</span>
+                        </div>
+                        <span class="balance-card__badge">+20% Sobregiro Autorizado</span>
+                    </div>
+                    <div class="balance-card__body">
+                        <span class="balance-card__label">Saldo en Cuenta</span>
+                        <div class="balance-card__amount" id="saldoCorriente">$ 0.00</div>
+                    </div>
+                    <div class="balance-card__footer">
+                        <span class="balance-card__account">CC •••• 8812</span>
+                        <span class="balance-card__tag">Activa • Sobregiro OK</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Tarjeta de Crédito (Azul Titanium Holográfico) -->
+                <div class="balance-card balance-card--credito" onclick="abrirModal('detalleTarjeta')" title="Haz clic para consultar compras, cuotas y tabla de amortización">
+                    <div class="balance-card__glow"></div>
+                    <div class="balance-card__header">
+                        <div class="balance-card__type">
+                            <span class="balance-card__icon">💳</span>
+                            <span class="balance-card__name">Tarjeta de Crédito</span>
+                        </div>
+                        <span class="balance-card__badge" id="cupoTarjeta">Cupo: $ 2,000,000</span>
+                    </div>
+                    <div class="balance-card__body">
+                        <span class="balance-card__label">Deuda Actual a Capital</span>
+                        <div class="balance-card__amount" id="deudaTarjeta">$ 0.00</div>
+                        
+                        <!-- Mini Barra de Uso de Cupo -->
+                        <div class="cupo-progress-container">
+                            <div class="cupo-progress-header">
+                                <span>Utilización del Cupo</span>
+                                <span id="progresoCupoLabel">0% utilizado</span>
+                            </div>
+                            <div class="cupo-progress-track">
+                                <div class="cupo-progress-bar" id="progresoCupoBar" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="balance-card__footer">
+                        <span class="balance-card__account">TC •••• 7291 • Mastercard Black</span>
+                        <span class="balance-card__link">Ver Cuotas y Amortización ↗</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Operaciones del Cajero -->
+            <div class="dashboard-column acciones-column">
+                <div class="column-title">
+                    <span class="column-icon">⚡</span>
+                    <span>Operaciones y Servicios Financieros</span>
+                </div>
+
+                <div class="actions-panel">
+                    <!-- Botón 1: Consignar -->
+                    <button type="button" class="action-btn action-btn--consignar" onclick="abrirModal('consignar')">
+                        <div class="action-btn__icon">📥</div>
+                        <div class="action-btn__info">
+                            <span class="action-btn__title">Consignar Dinero</span>
+                            <span class="action-btn__desc">Acreditar fondos en cuenta de ahorros o corriente</span>
+                        </div>
+                        <span class="action-btn__arrow">→</span>
+                    </button>
+
+                    <!-- Botón 2: Retirar -->
+                    <button type="button" class="action-btn action-btn--retirar" onclick="abrirModal('retirar')">
+                        <div class="action-btn__icon">📤</div>
+                        <div class="action-btn__info">
+                            <span class="action-btn__title">Retirar Dinero</span>
+                            <span class="action-btn__desc">Disposición con cobro del 1.5% o sobregiro del 20%</span>
+                        </div>
+                        <span class="action-btn__arrow">→</span>
+                    </button>
+
+                    <!-- Botón 3: Transferir -->
+                    <button type="button" class="action-btn action-btn--transferir" onclick="abrirModal('transferir')">
+                        <div class="action-btn__icon">🔄</div>
+                        <div class="action-btn__info">
+                            <span class="action-btn__title">Transferir Dinero</span>
+                            <span class="action-btn__desc">Entre cuentas propias o a terceros por cédula</span>
+                        </div>
+                        <span class="action-btn__arrow">→</span>
+                    </button>
+
+                    <!-- Botón 4: Comprar con Tarjeta -->
+                    <button type="button" class="action-btn action-btn--comprar" onclick="abrirModal('comprar')">
+                        <div class="action-btn__icon">🛍️</div>
+                        <div class="action-btn__info">
+                            <span class="action-btn__title">Comprar con Tarjeta</span>
+                            <span class="action-btn__desc">Diferir a cuotas con cálculo financiero francés</span>
+                        </div>
+                        <span class="action-btn__arrow">→</span>
+                    </button>
+
+                    <!-- Botón 5: Pagar Tarjeta de Crédito (¡Nueva función bancaria esencial!) -->
+                    <button type="button" class="action-btn action-btn--pagar-tarjeta" onclick="abrirModal('pagarTarjeta')">
+                        <div class="action-btn__icon">💳</div>
+                        <div class="action-btn__info">
+                            <span class="action-btn__title">Pagar Tarjeta de Crédito</span>
+                            <span class="action-btn__desc">Pagar cuota del mes, cancelar compra o abono libre</span>
+                        </div>
+                        <span class="action-btn__arrow">→</span>
+                    </button>
+
+                    <!-- Botón 6: Ver Historial y Extractos -->
+                    <button type="button" class="action-btn action-btn--historial" onclick="mostrarMovimientos()">
+                        <div class="action-btn__icon">📜</div>
+                        <div class="action-btn__info">
+                            <span class="action-btn__title">Historial y Extractos</span>
+                            <span class="action-btn__desc">Consulta movimientos detallados y saldos en línea</span>
+                        </div>
+                        <span class="action-btn__arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Flotante de Transacciones y Consulta -->
+    <div id="modalTransaccion" class="modal-overlay seccion-oculta">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <span class="modal-badge" id="modalBadge">OPERACIÓN BANCARIA</span>
+                    <h3 id="modalTitulo">Realizar Transacción</h3>
+                </div>
+                <button type="button" class="modal-close" onclick="cerrarModal()" aria-label="Cerrar modal">&times;</button>
+            </div>
+
+            <form id="formModalTransaccion" onsubmit="event.preventDefault(); ejecutarTransaccion();" class="modal-body">
+                <!-- Selector de cuenta (consignar, retirar, débito para pagar tarjeta o transferencias) -->
+                <div class="modal-field" id="campoTipoCuenta">
+                    <label for="modalTipoCuenta" id="labelTipoCuenta">Cuenta de Operación</label>
+                    <select id="modalTipoCuenta" onchange="ajustarCuentaDestino()">
+                        <option value="ahorros">Cuenta de Ahorros</option>
+                        <option value="corriente">Cuenta Corriente</option>
+                    </select>
+                </div>
+
+                <!-- Campos de Transferencia -->
+                <div class="modal-field seccion-oculta" id="campoTipoTransferencia">
+                    <label for="modalTipoDestino">Tipo de Destino</label>
+                    <select id="modalTipoDestino" onchange="cambiarTipoDestinoTransferencia()">
+                        <option value="propia">Entre mis propias cuentas</option>
+                        <option value="tercero">A otro usuario (Por Cédula o Usuario)</option>
+                    </select>
+                </div>
+
+                <div class="modal-field seccion-oculta" id="campoCuentaDestinoPropia">
+                    <label for="modalCuentaDestino">Cuenta de Destino</label>
+                    <select id="modalCuentaDestino" onchange="validarCuentasTransferencia()">
+                        <option value="corriente">Cuenta Corriente</option>
+                        <option value="ahorros">Cuenta de Ahorros</option>
+                    </select>
+                </div>
+
+                <div class="modal-field seccion-oculta" id="campoCedulaDestino">
+                    <label for="modalCedulaDestino">Cédula o Usuario del Destinatario</label>
+                    <input type="text" id="modalCedulaDestino" placeholder="Ej: 1020304050 o nombre de usuario">
+                </div>
+
+                <!-- Campos específicos de Compra con Tarjeta -->
+                <div class="modal-field seccion-oculta" id="campoDescripcionCompra">
+                    <label for="modalDescripcion">Concepto / Comercio de la Compra</label>
+                    <input type="text" id="modalDescripcion" placeholder="Ej: Supermercado, Almacén de Ropa, Tecnología...">
+                </div>
+
+                <!-- Input Monto -->
+                <div class="modal-field" id="campoMonto">
+                    <label for="modalMonto">Monto de la Operación ($ COP)</label>
+                    <input type="number" id="modalMonto" placeholder="Ej: 150000" min="1" step="any">
+                </div>
+
+                <!-- Input Cuotas para Compras con Tarjeta -->
+                <div class="modal-field seccion-oculta" id="campoCuotas">
+                    <label for="modalCuotas">Número de Cuotas (1 a 36)</label>
+                    <input type="number" id="modalCuotas" placeholder="1 a 36" min="1" max="36" value="1">
+                    <span class="field-hint">✦ Tasas: 1-2 cuotas: 0% int | 3-6 cuotas: 1.9% mes | 7-36 cuotas: 2.3% mes</span>
+                </div>
+
+                <!-- Simulador financiero en vivo -->
+                <div id="simuladorCuotasPreview" class="seccion-oculta"></div>
+
+                <!-- Campos específicos de Pagar Tarjeta -->
+                <div class="modal-field seccion-oculta" id="campoPagarTarjetaOpciones"></div>
+
+                <!-- Campos de Editar Perfil -->
+                <div class="modal-field seccion-oculta" id="campoNuevoNombre">
+                    <label for="modalNuevoNombre">Nombre Completo</label>
+                    <input type="text" id="modalNuevoNombre" placeholder="Tu nombre completo">
+                </div>
+
+                <div class="modal-field seccion-oculta" id="campoNuevoCelular">
+                    <label for="modalNuevoCelular">Número de Celular</label>
+                    <input type="number" id="modalNuevoCelular" placeholder="Tu celular de contacto">
+                </div>
+
+                <!-- Campos de Cambio de Clave -->
+                <div class="modal-field seccion-oculta" id="campoClaveActual">
+                    <label for="modalClaveActual">Contraseña Actual</label>
+                    <input type="password" id="modalClaveActual" placeholder="Ingresa tu contraseña actual">
+                </div>
+
+                <div class="modal-field seccion-oculta" id="campoClaveNueva">
+                    <label for="modalClaveNueva">Nueva Contraseña</label>
+                    <input type="password" id="modalClaveNueva" placeholder="Mínimo 4 caracteres">
+                </div>
+
+                <div class="modal-field seccion-oculta" id="campoClaveConfirmar">
+                    <label for="modalClaveConfirmar">Confirmar Nueva Contraseña</label>
+                    <input type="password" id="modalClaveConfirmar" placeholder="Repite la nueva contraseña">
+                </div>
+
+                <!-- Contenedor del Historial, Compras y Amortización -->
+                <div id="contenedorHistorial" class="historial-contenedor seccion-oculta">
+                    <div class="historial-tabs" id="historialTabs">
+                        <button type="button" id="tabHistorialCuentas" class="tab-btn tab-btn--activo" onclick="cambiarTabHistorial('cuentas')">🏦 Movimientos Cuentas</button>
+                        <button type="button" id="tabHistorialTarjeta" class="tab-btn" onclick="cambiarTabHistorial('tarjeta')">💳 Compras y Cuotas Tarjeta</button>
+                    </div>
+                    <div id="historialLista"></div>
+                </div>
+
+                <!-- Mensaje de estado o error -->
+                <p id="msgModal" class="mensaje-error"></p>
+
+                <!-- Botones de Acción del Modal -->
+                <div class="modal-actions" id="modalBotones">
+                    <button type="button" class="btn-modal-cancel" onclick="cerrarModal()">Cancelar</button>
+                    <button type="submit" class="btn-modal-confirm" id="btnModalConfirmar">Confirmar Operación</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Corporativo Futurista -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Banco Mi Plata Financial Bank. Entidad vigilada por la Superintendencia Financiera. Todos los derechos reservados.</p>
+            <p class="footer-subtext">Diseñado para Cesde — Programación Orientada a Objetos en JavaScript (Frontend I).</p>
+        </div>
+    </footer>
+
+    <!-- Scripts del Banco -->
+    <script src="../js/funciones.js"></script>
+    <script>
+        // Efecto 3D interactivo en la tarjeta bancaria
+        const bankCard = document.getElementById('bankCard');
+        if (bankCard) {
+            const wrapper = bankCard.parentElement;
+
+            wrapper.addEventListener('mousemove', (e) => {
+                const rect = wrapper.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = ((y - centerY) / centerY) * -12;
+                const rotateY = ((x - centerX) / centerX) * 12;
+
+                bankCard.style.animation = 'none';
+                bankCard.style.transform = `translateY(-12px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+            });
+
+            wrapper.addEventListener('mouseleave', () => {
+                bankCard.style.transform = '';
+                bankCard.style.animation = '';
+            });
+        }
+    </script>
+</body>
+</html>
